@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
       root: `./` });
 })
 
-app.post('/api/downloader/', (req, res) => {
+app.put('/api/downloader/', (req, res) => {
   const url = req.body.url;
   const rand = Math.floor(Math.random() * 100)
   if(rand === 1) rand++
@@ -74,6 +74,10 @@ app.get('/api/video', (req, res) => {
   }
 })
 
+
+app.get('/test', (req, res) => {
+  res.send("Hello!");
+})
 app.listen(port, () => {
   console.log(`Listening on port ${port}!`)
 })
